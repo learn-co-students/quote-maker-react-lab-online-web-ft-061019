@@ -14,8 +14,8 @@ export default (state = [], action) => {
       return [...state.slice(0, indx), altQuote, ...state.slice(indx + 1, state.length)]
     case 'DOWNVOTE_QUOTE':
       indx = state.findIndex(quote => quote.id === action.quoteId)
-      altQuote = {...[indx]}
-      altQuote.votes = (altQuote.votes > 0 ? altQuote.votes - 1 : 0)
+      altQuote = {...state[indx]}
+      altQuote.votes = (altQuote.votes >=1 ? altQuote.votes - 1 : 0)
       return [...state.slice(0, indx), altQuote, ...state.slice(indx + 1, state.length)]
     default:
       return state
