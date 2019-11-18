@@ -1,6 +1,4 @@
 export default (state = [], action) => {
-  console.log("reducer Action", action)
-  console.log("reducer begin state", state)
 
   let idx
   let updatedQuote
